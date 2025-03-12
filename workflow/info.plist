@@ -82,7 +82,7 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Sponge Bink</string>
+	<string>May June July</string>
 	<key>description</key>
 	<string>Backup Alfred's clipboard history so it doesn't expire!</string>
 	<key>disabled</key>
@@ -496,6 +496,6 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 	<key>version</key>
 	<string>0.3</string>
 	<key>webaddress</key>
-	<string>https://github.com/Sponge-bink/alfred-clipboard-history-archive</string>
+	<string>https://github.com/April-June-August/alfred-clipboard-history-archive</string>
 </dict>
 </plist>
