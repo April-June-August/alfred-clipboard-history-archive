@@ -1,4 +1,6 @@
-# Clipboard History Archive for Alfred
+# <img src='Workflow/icon.png' width='45' align='center' alt='icon'> Clipboard History Archive for Alfred
+
+[➡️ Download the latest release](../../releases/latest)
 
 Backup Alfred’s clipboard history so it doesn’t expire!
 
