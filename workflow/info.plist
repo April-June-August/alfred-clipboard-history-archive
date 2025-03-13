@@ -433,7 +433,7 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string></string>
+				<string>~/Library/Application Support/Alfred/Workflow Data/com.may-june-july.SearchforClipboardHistoryArchive</string>
 				<key>filtermode</key>
 				<integer>1</integer>
 				<key>placeholder</key>
@@ -442,7 +442,7 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 				<true/>
 			</dict>
 			<key>description</key>
-			<string></string>
+			<string>Defaults to the workflow’s data folder</string>
 			<key>label</key>
 			<string>Backup to</string>
 			<key>type</key>
@@ -494,7 +494,7 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 		</dict>
 	</array>
 	<key>version</key>
-	<string>0.3</string>
+	<string>0.4</string>
 	<key>webaddress</key>
 	<string>https://github.com/April-June-August/alfred-clipboard-history-archive</string>
 </dict>
