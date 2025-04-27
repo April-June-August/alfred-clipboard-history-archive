@@ -21,11 +21,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>28D71740-7274-4DA8-816B-1E030E828C44</key>
+		<key>1B16D2A2-9F32-4F09-811F-F9626DEAF79D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>276FE139-E1CA-4B46-8799-5D5FA4AB0F61</string>
+				<string>0FB5A647-B48B-481B-824F-AAEF148D10EE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -33,6 +33,9 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+		</array>
+		<key>276FE139-E1CA-4B46-8799-5D5FA4AB0F61</key>
+		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>31CAA87A-9ED2-4510-876F-27D4834B0DCC</string>
@@ -43,15 +46,38 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+		</array>
+		<key>28D71740-7274-4DA8-816B-1E030E828C44</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>276FE139-E1CA-4B46-8799-5D5FA4AB0F61</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Copy to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>DA5F01DA-2650-4417-AAB4-AFFEAD5FE71F</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
-				<string>Show in Text View</string>
+				<string></string>
 				<key>vitoclose</key>
 				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>3EE4B8F3-F771-4959-92EF-B3AC7C33FC06</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Paste to front-most app</string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>45D1ECF6-2130-4939-B840-92C2CE2CD068</key>
@@ -67,11 +93,24 @@
 				<false/>
 			</dict>
 		</array>
-		<key>9F77DCD6-5A13-47FD-8270-A15E3A2CAADC</key>
+		<key>64178271-0630-49E3-B996-41E83761CB03</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>28D71740-7274-4DA8-816B-1E030E828C44</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>92FF41DA-CC95-45C0-B725-46EE9FE87430</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1B16D2A2-9F32-4F09-811F-F9626DEAF79D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -113,6 +152,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>✅️ Copied!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>31CAA87A-9ED2-4510-876F-27D4834B0DCC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -137,28 +197,40 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>9F77DCD6-5A13-47FD-8270-A15E3A2CAADC</string>
+			<string>64178271-0630-49E3-B996-41E83761CB03</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>✅️ Copied!</string>
+				<key>behaviour</key>
+				<integer>1</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string>Esc to get back to the search result</string>
+				<key>inputfile</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string></string>
+				<key>outputmode</key>
+				<integer>0</integer>
+				<key>scriptinput</key>
+				<integer>0</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
-			<string>31CAA87A-9ED2-4510-876F-27D4834B0DCC</string>
+			<string>DA5F01DA-2650-4417-AAB4-AFFEAD5FE71F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -214,35 +286,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>behaviour</key>
-				<integer>1</integer>
-				<key>fontmode</key>
-				<integer>0</integer>
-				<key>fontsizing</key>
-				<integer>0</integer>
-				<key>footertext</key>
-				<string>Esc to get back to the search result</string>
-				<key>inputfile</key>
-				<string></string>
-				<key>inputtype</key>
-				<integer>0</integer>
-				<key>loadingtext</key>
-				<string></string>
-				<key>outputmode</key>
-				<integer>0</integer>
-				<key>scriptinput</key>
-				<integer>0</integer>
-				<key>spellchecking</key>
-				<integer>0</integer>
-				<key>stackview</key>
+				<key>autopaste</key>
 				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.userinterface.text</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>DA5F01DA-2650-4417-AAB4-AFFEAD5FE71F</string>
+			<string>3EE4B8F3-F771-4959-92EF-B3AC7C33FC06</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -319,6 +377,38 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>backup</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>92FF41DA-CC95-45C0-B725-46EE9FE87430</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>backup</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>1B16D2A2-9F32-4F09-811F-F9626DEAF79D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string># Clipboard History Archive for Alfred
@@ -361,7 +451,7 @@ Clipboard items matching your query will show in the result.
 
 ![](images/2.png)
 
-You can hit return to copy the item to clipboard or hit ⌘ return to view the item in Alfred’s Text View (Alfred 5.5 required). You can get right back to the previous window by pressing Esc.
+You can hit ↵ to view the item in Alfred’s Text View (Alfred 5.5 required), hit ⌃↵ to copy the item to clipboard or  hit ⌘↵ to paste the item to front-most app. When you are in the preview window, you can get right back to the previous list window by pressing Esc.
 
 ![](images/7.png)
 
@@ -373,14 +463,21 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 		<key>0FB5A647-B48B-481B-824F-AAEF148D10EE</key>
 		<dict>
 			<key>xpos</key>
-			<real>240</real>
+			<real>505</real>
 			<key>ypos</key>
 			<real>535</real>
+		</dict>
+		<key>1B16D2A2-9F32-4F09-811F-F9626DEAF79D</key>
+		<dict>
+			<key>xpos</key>
+			<real>325</real>
+			<key>ypos</key>
+			<real>740</real>
 		</dict>
 		<key>273268BD-712D-4D86-B3CF-99BCD7B71194</key>
 		<dict>
 			<key>xpos</key>
-			<real>440</real>
+			<real>705</real>
 			<key>ypos</key>
 			<real>555</real>
 		</dict>
@@ -401,9 +498,16 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 		<key>31CAA87A-9ED2-4510-876F-27D4834B0DCC</key>
 		<dict>
 			<key>xpos</key>
+			<real>705</real>
+			<key>ypos</key>
+			<real>95</real>
+		</dict>
+		<key>3EE4B8F3-F771-4959-92EF-B3AC7C33FC06</key>
+		<dict>
+			<key>xpos</key>
 			<real>505</real>
 			<key>ypos</key>
-			<real>245</real>
+			<real>390</real>
 		</dict>
 		<key>45D1ECF6-2130-4939-B840-92C2CE2CD068</key>
 		<dict>
@@ -412,19 +516,26 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 			<key>ypos</key>
 			<real>535</real>
 		</dict>
-		<key>9F77DCD6-5A13-47FD-8270-A15E3A2CAADC</key>
+		<key>64178271-0630-49E3-B996-41E83761CB03</key>
 		<dict>
 			<key>xpos</key>
 			<real>60</real>
 			<key>ypos</key>
 			<real>245</real>
 		</dict>
+		<key>92FF41DA-CC95-45C0-B725-46EE9FE87430</key>
+		<dict>
+			<key>xpos</key>
+			<real>60</real>
+			<key>ypos</key>
+			<real>710</real>
+		</dict>
 		<key>DA5F01DA-2650-4417-AAB4-AFFEAD5FE71F</key>
 		<dict>
 			<key>xpos</key>
 			<real>505</real>
 			<key>ypos</key>
-			<real>385</real>
+			<real>245</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -494,7 +605,7 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 		</dict>
 	</array>
 	<key>version</key>
-	<string>0.4</string>
+	<string>0.5</string>
 	<key>webaddress</key>
 	<string>https://github.com/April-June-August/alfred-clipboard-history-archive</string>
 </dict>

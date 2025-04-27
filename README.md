@@ -40,7 +40,7 @@ Clipboard items matching your query will show in the result.
 
 ![](workflow/images/2.png)
 
-You can hit return to copy the item to clipboard or hit ⌘ return to view the item in Alfred’s Text View (Alfred 5.5 required). You can get right back to the previous window by pressing Esc.
+You can hit ↵ to view the item in Alfred’s Text View (Alfred 5.5 required), hit ⌃↵ to copy the item to clipboard or  hit ⌘↵ to paste the item to front-most app. When you are in the preview window, you can get right back to the previous list window by pressing Esc.
 
 ![](workflow/images/7.png)
 
