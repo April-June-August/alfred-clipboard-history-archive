@@ -605,7 +605,7 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 		</dict>
 	</array>
 	<key>version</key>
-	<string>0.5</string>
+	<string>0.6</string>
 	<key>webaddress</key>
 	<string>https://github.com/April-June-August/alfred-clipboard-history-archive</string>
 </dict>
