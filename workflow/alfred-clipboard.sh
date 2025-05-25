@@ -9,7 +9,6 @@
 # Example Usage:
 #    alfred-clipboard.sh backup
 #    alfred-clipboard.sh status
-#    alfred-clipboard.sh shell
 #    alfred-clipboard.sh dump > ~/Desktop/clipboard_db.sqlite3
 #    alfred-clipboard.sh search 'some_string' --separator=, --limit=2 --fields=ts,item,app
 
@@ -114,18 +113,6 @@ MERGE_QUERY="
 
 # clipboard timestamps are in Mac epoch format (Mac epoch started on 1/1/2001, not 1/1/1970)
 # to convert them to standard UTC UNIX timestamps, add 978307200
-# 2 months = 60 days * 24 hr * 60 min * 60 sec = 5184000 seconds
-# for all rows WHERE ts <(current_timestamp - 5184000) aka older than 2 months ago, set ts = ts + (60 * 60 * 24 * 30) aka one month ago
-BUMP_QUERY="
-    UPDATE
-        ts = ts + 2592000
-    WHERE
-        ts < (current_timestamp - 5184000)
-
-    TODO finish this
-"
-
-
 
 number_of_backed_up_rows=0
 existing_rows=0
@@ -171,18 +158,6 @@ function update_master_db {
     # echo "    ✔️ Wrote    $merged_rows total items to $MERGED_DB_NAME"
 }
 
-function bump_alfred_db_timestamps {
-    echo -e "\n⏳️ Bumping timestamps in clipboard database so that older items don't expire..."
-    echo "NOT YET IMPLEMENTED"
-    exit 4
-    # TODO
-    sqlite3 "$ALFRED_DB" "
-        BEGIN;
-        $BUMP_QUERY
-        COMMIT;
-    "
-}
-
 # *************************************************************************
 # -------------------------------------------------------------------------
 # *************************************************************************
@@ -208,13 +183,6 @@ function backup {
     update_master_db
 
     echo -e "\n✅️ Done backing up clipboard history."
-    summary
-}
-
-function bump {
-    backup_alfred_db
-    bump_alfred_db_timestamps
-    echo -e "\n✅️ Done bumping clipboard history timestamps."
     summary
 }
 
@@ -347,12 +315,8 @@ function main {
         status
     elif [[ "$COMMAND" == "backup" ]]; then
         backup
-    elif [[ "$COMMAND" == "shell" ]]; then
-        sqlite3 "$MERGED_DB"
     elif [[ "$COMMAND" == "dump" ]]; then
         sqlite3 "$MERGED_DB" ".dump"
-    # elif [[ "$COMMAND" == "bump" ]]; then
-    #     bump_alfred_db_timestamps
     elif [[ "$COMMAND" == "search" ]]; then
         if [[ "${KWARGS[style]}" == "json" ]]; then
             sqlite3 "$MERGED_DB" "
