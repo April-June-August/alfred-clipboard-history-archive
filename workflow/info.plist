@@ -565,7 +565,7 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>pp</string>
+				<string>clipboardsearch</string>
 				<key>placeholder</key>
 				<string></string>
 				<key>required</key>
