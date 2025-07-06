@@ -335,7 +335,7 @@
 				<key>fixedorder</key>
 				<true/>
 				<key>items</key>
-				<string>[{"title":"Status of {var:SQLite3_database_folder}","arg":"status","subtitle":"Get numbers of records in the Alfred's current database and your master database"},{"title":"Backup to {var:SQLite3_database_folder}","arg":"backup","subtitle":"Backup and merge records into main database"}]</string>
+				<string>[{"title":"Status of {var:SQLite3_database_folder}","arg":"status","subtitle":"Get numbers of records in the Alfred’s current database and your master database"},{"title":"Backup to {var:SQLite3_database_folder}","arg":"backup","subtitle":"Backup and merge records into main database"}]</string>
 				<key>keyword</key>
 				<string>{var:history_archive_keyword}</string>
 				<key>matchmode</key>

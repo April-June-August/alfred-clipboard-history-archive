@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# This is a script that provides infinite history to get around Alfred's 3-month limit.
+# This is a script that provides infinite history to get around Alfred’s 3-month limit.
 # It works by regularly backing up and appending the items in the alfred db to a
-# sqlite database in the workflow's data folder. It also provides search functionality.
+# sqlite database in the workflow’s data folder. It also provides search functionality.
 
 # https://www.alfredforum.com/topic/10969-keep-clipboard-history-forever/?tab=comments#comment-68859
 # https://www.reddit.com/r/Alfred/comments/cde29x/script_to_manage_searching_backing_up_and/
@@ -26,7 +26,7 @@ MERGED_DB_NAME="${MERGED_DB_NAME:-all.sqlite3}"
 
 # uncomment the second option if you also to store the duplicate item history
 # entries for whenever the same value was copied again at a different time
-# This wouldn't be affective since this UNIQUE_FILTER variable is no longer 
+# This wouldn’t be affective since this UNIQUE_FILTER variable is no longer 
 # in use
 UNIQUE_FILTER="${UNIQUE_FILTER:-'latest.item = item'}"
 # UNIQUE_FILTER="${UNIQUE_FILTER:-'latest.item = item AND latest.ts = ts'}"
