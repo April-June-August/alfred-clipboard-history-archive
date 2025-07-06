@@ -10,7 +10,7 @@ set +o pipefail
 ALFRED_DATA_DIR="${ALFRED_DATA_DIR:-$HOME/Library/Application Support/Alfred/Databases}"
 ALFRED_DB_NAME="${ALFRED_DB_NAME:-clipboard.alfdb}"
 BACKUP_DB_NAME="${BACKUP_DB_NAME:-$(date +'%Y-%m-%d_%H:%M:%S').sqlite3}"
-MERGED_DB_NAME="${MERGED_DB_NAME:-all.sqlite3}"
+MASTER_DB_NAME="${MASTER_DB_NAME:-all.sqlite3}"
 
 
 
@@ -28,57 +28,57 @@ function backup_alfred_db {
 
 function init_master_db {
     echo -e "\n⏳️ Initializing new clipboard database with $number_of_backed_up_rows items..."
-    cp "$BACKUP_DB" "$MERGED_DB"
-    echo "    ✔️ Copied new db $MERGED_DB"
+    cp "$BACKUP_DB" "$MASTER_DB"
+    echo "    ✔️ Copied new db $MASTER_DB"
     echo
-    sqlite3 "$MERGED_DB" ".schema" | sed 's/^/    /'
+    sqlite3 "$MASTER_DB" ".schema" | sed 's/^/    /'
 }
 
 function update_master_db {
     echo -e "\n⏳️ Updating Master Clipboard History DB..."
-    existing_rows=$(sqlite3 "$MERGED_DB" 'select count(*) from clipboard;')
+    existing_rows=$(sqlite3 "$MASTER_DB" 'select count(*) from clipboard;')
 
-    echo "    ✔️ Read     $existing_rows existing items from "$(basename "$MERGED_DB")
+    echo "    ✔️ Read     $existing_rows existing items from "$(basename "$MASTER_DB")
     
     local MERGE_QUERY="
         /* Delete any items that are the same in both databases */
-        DELETE FROM merged_db.clipboard
+        DELETE FROM master_db.clipboard
         WHERE item IN (SELECT item FROM latest_db.clipboard);
 
         /* Insert all items from the latest_db backup  */
-        INSERT INTO merged_db.clipboard
+        INSERT INTO master_db.clipboard
         SELECT * FROM latest_db.clipboard;
     "
     
-    sqlite3 "$MERGED_DB" "
-        attach '$MERGED_DB' as merged_db;
+    sqlite3 "$MASTER_DB" "
+        attach '$MASTER_DB' as master_db;
         attach '$BACKUP_DB' as latest_db;
         BEGIN;
         $MERGE_QUERY
         COMMIT;
         detach latest_db;
-        detach merged_db;
+        detach master_db;
     "
-    merged_rows=$(sqlite3 "$MERGED_DB" 'select count(*) from clipboard;')
-    new_rows=$(( merged_rows - existing_rows ))
-    echo "    ✔️ Incoming $number_of_backed_up_rows items from backup you just created to $MERGED_DB_NAME"
+    master_rows=$(sqlite3 "$MASTER_DB" 'select count(*) from clipboard;')
+    new_rows=$(( master_rows - existing_rows ))
+    echo "    ✔️ Incoming $number_of_backed_up_rows items from backup you just created to $MASTER_DB_NAME"
     echo "    ✔️ Merged   $new_rows new items to Master DB"
 }
 
 function summary {
     number_of_backed_up_rows=$(sqlite3 "$BACKUP_DB" 'select count(*) from clipboard;')
-    existing_rows=$(sqlite3 "$MERGED_DB" 'select count(*) from clipboard;')
-    merged_rows=$(sqlite3 "$MERGED_DB" 'select count(*) from clipboard;')
+    existing_rows=$(sqlite3 "$MASTER_DB" 'select count(*) from clipboard;')
+    master_rows=$(sqlite3 "$MASTER_DB" 'select count(*) from clipboard;')
     echo "    Original   $ALFRED_DB ($number_of_original_rows items)"
     echo "    Backup     $BACKUP_DB ($number_of_backed_up_rows items)"
-    echo "    Master     $MERGED_DB ($merged_rows items)"
+    echo "    Master     $MASTER_DB ($master_rows items)"
 }
 
 function status {
     echo "🎩 Alfred: $ALFRED_DB ($number_of_original_rows items)"
-    if [[ -f "$MERGED_DB" ]]; then
-        merged_rows=$(sqlite3 "$MERGED_DB" 'select count(*) from clipboard;')
-        echo "💾 Master: $MERGED_DB ($merged_rows items)"
+    if [[ -f "$MASTER_DB" ]]; then
+        master_rows=$(sqlite3 "$MASTER_DB" 'select count(*) from clipboard;')
+        echo "💾 Master: $MASTER_DB ($master_rows items)"
     else
         backup_keyword="${history_archive_keyword:-clipboardarchive}"
         echo "💾 Master: No backup data found in $BACKUP_DATA_DIR"
@@ -89,7 +89,7 @@ function status {
 
 function backup {
     backup_alfred_db
-    if [[ -f "$MERGED_DB" ]]; then
+    if [[ -f "$MASTER_DB" ]]; then
         update_master_db
     else
         init_master_db
@@ -128,7 +128,7 @@ function main {
 
     ALFRED_DB="$ALFRED_DATA_DIR/$ALFRED_DB_NAME"
     BACKUP_DB="$BACKUP_DATA_DIR/$BACKUP_DB_NAME"
-    MERGED_DB="$BACKUP_DATA_DIR/$MERGED_DB_NAME"
+    MASTER_DB="$BACKUP_DATA_DIR/$MASTER_DB_NAME"
 
     number_of_original_rows=$(sqlite3 "$ALFRED_DB" 'select count(*) from clipboard;')
 
