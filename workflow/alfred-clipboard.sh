@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# This is a script that provides infinite history to get around Alfred's 3-month limit.
+# This is a script that provides infinite history to get around Alfred’s 3-month limit.
 # It works by regularly backing up and appending the items in the alfred db to a
-# sqlite database in the workflow's data folder.
+# sqlite database in the workflow’s data folder.
 
 shopt -s extglob
 set +o pipefail
