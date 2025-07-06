@@ -2,6 +2,7 @@ import sqlite3
 import sys
 import datetime
 import json
+import os
 
 import re
 import unicodedata
@@ -31,7 +32,12 @@ def search_clipboard(keyword, db_path):
             'title': title,
             'arg': item,
             'timestamp': ts,
-            'subtitle': f"{str(item.count('\n') + 1) + " lines, " if item.count('\n') else ""}{len(item)} characters, copied at {datetime.datetime.fromtimestamp(ts + 978307200).strftime('%Y-%m-%d %-I:%M:%S %p')} from {app}",
+            'subtitle': "{}{} characters, copied at {} from {}".format(
+                str(item.count('\n') + 1) + " lines, " if item.count('\n') else "",
+                len(item),
+                datetime.datetime.fromtimestamp(ts + 978307200).strftime('%Y-%m-%d %-I:%M:%S %p'),
+                app
+            ),
             'icon': {
                 'path': apppath,
                 'type': 'fileicon',
@@ -45,6 +51,26 @@ def search_clipboard(keyword, db_path):
 if __name__ == "__main__":
     keyword = sys.argv[1]
     db_path = sys.argv[2]
+
+    # Check if database exists
+    if not os.path.exists(db_path):
+        # Get the backup keyword from environment variable
+        backup_keyword = os.environ.get('history_archive_keyword', 'clipboardarchive')
+        
+        response_dict = {
+            'skipknowledge': True,
+            'items': [{
+                'title': 'No clipboard archive database found',
+                'subtitle': f'Please create a backup first by typing ‘{backup_keyword}’ in Alfred',
+                'arg': '',
+                'valid': False,
+                'icon': {
+                    'path': 'icon.png'
+                }
+            }]
+        }
+        sys.stdout.write(json.dumps(response_dict))
+        sys.exit(0)
 
     results = search_clipboard(keyword, db_path)
 
