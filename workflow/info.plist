@@ -343,7 +343,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Backup Alfred Clipboard History, merge or show status of the backup</string>
+				<string>Backup Alfred’s Clipboard History, merge or show status of the backup</string>
 				<key>title</key>
 				<string>Archive Clipboard</string>
 				<key>withspace</key>
@@ -544,7 +544,7 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>~/Library/Application Support/Alfred/Workflow Data/com.may-june-july.SearchforClipboardHistoryArchive</string>
+				<string>~/Library/Application Support/Alfred/Workflow Data/com.may-june-july.ClipboardHistoryArchive</string>
 				<key>filtermode</key>
 				<integer>1</integer>
 				<key>placeholder</key>
