@@ -1,74 +1,15 @@
 #!/usr/bin/env bash
 # This is a script that provides infinite history to get around Alfred's 3-month limit.
 # It works by regularly backing up and appending the items in the alfred db to a
-# sqlite database in the user's home folder. It also provides search functionality.
+# sqlite database in the workflow's data folder. It also provides search functionality.
 
 # https://www.alfredforum.com/topic/10969-keep-clipboard-history-forever/?tab=comments#comment-68859
 # https://www.reddit.com/r/Alfred/comments/cde29x/script_to_manage_searching_backing_up_and/
 
-# Example Usage:
-#    alfred-clipboard.sh backup
-#    alfred-clipboard.sh status
-#    alfred-clipboard.sh dump > ~/Desktop/clipboard_db.sqlite3
-#    alfred-clipboard.sh search 'some_string' --separator=, --limit=2 --fields=ts,item,app
 
 shopt -s extglob
 set +o pipefail
 
-# *************************************************************************
-# --------------------------- Why this exists -----------------------------
-# *************************************************************************
-
-# I'd be willing to pay >another $30 on top of my existing Legendary license for 
-# unlimited clipboard history, and I fully accept any CPU/Memory hit necessary to get it.
-#
-# I use Clipboard History as a general buffer for everything in my life, 
-# and losing everything beyond 3 months is a frequent source of headache.  
-# Here's a small sample of a few recent things I've lost due to history expiring:
-#
-#  - flight confirmation details
-#  - commit summaries with commit ids (detached commits that are hard to find due to deleted branches)
-#  - important UUIDs
-#  - ssh public keys
-#  - many many many file paths (lots of obscure config file paths that I never bother to remember)
-#  - entire config files 
-#  - blog post drafts
-#  - comments on social media
-#  - form fields on websites
-#
-# It's always stuff that I don't realize at the time would be important later
-# so it would be pointless to try and use snippets to solve this issue.
-#
-# Having a massive index of every meaningful string that's passed through my 
-# brain is incredibly useful. In fact I rely on it so much that I'd even 
-# willing to manage an entire separate server with Elasticsearch/Redis 
-# full-text search to handle storage and indexing beyond 3 months (if 
-# that's really what it takes to keep history indefinitely).
-#
-# If needed you could hide "6 months" "12 months" and "unlimited" behind an 
-# "Advanced settings" pane and display a big warning about potential performance 
-# downsides.
-#
-# For now I just periodically back up `~/Library/Application Support/Alfred/Databases/clipboard.alfdb` 
-# to a separate folder, and merge the rows in it with a main database.  This at 
-# least allows me to query further back by querying the merged database directly.
-#  Maybe I'll build a workflow to do that if I have time, but no promises.
-#
-# I've created a script that handles the backup of the db, merging it with an
-# infinite-history sqlite db in my home folder, and searching functionality.
-# https://gist.github.com/pirate/6551e1c00a7c4b0c607762930e22804c
-#
-# I also tried hacking around the limit by changing the Alfred binary directly
-# but unfortunately I was only able to find the limit in the .nib file (which
-# is useless as it's just the GUI definition).
-# I'd have to properly decompile Alfred it to find the actual limit logic...
-# $ ggrep --byte-offset --only-matching --text '3 Months' \
-#       '/Applications/Alfred.app/Contents/Frameworks/Alfred Framework.framework/Versions/A/Resources/AlfredFeatureClipboard.nib'
-# 12590:3 Months
-#
-# (Now I just have to convince the Google Chrome team to also allow storing 
-# browser history longer than 3 months... then the two biggest sources of 
-# data-loss pain in my life will be eliminated).
 
 
 # *************************************************************************
