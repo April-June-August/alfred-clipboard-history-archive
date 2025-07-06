@@ -35,6 +35,8 @@ def search_clipboard(keyword, db_path):
             'subtitle': "{}{} characters, copied at {} from {}".format(
                 str(item.count('\n') + 1) + " lines, " if item.count('\n') else "",
                 len(item),
+                # clipboard timestamps are in Mac epoch format (Mac epoch started on 1/1/2001, not 1/1/1970)
+                # to convert them to standard UTC UNIX timestamps, add 978307200
                 datetime.datetime.fromtimestamp(ts + 978307200).strftime('%Y-%m-%d %-I:%M:%S %p'),
                 app
             ),

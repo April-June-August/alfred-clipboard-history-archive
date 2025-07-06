@@ -13,8 +13,6 @@ BACKUP_DB_NAME="${BACKUP_DB_NAME:-$(date +'%Y-%m-%d_%H:%M:%S').sqlite3}"
 MERGED_DB_NAME="${MERGED_DB_NAME:-all.sqlite3}"
 
 
-# clipboard timestamps are in Mac epoch format (Mac epoch started on 1/1/2001, not 1/1/1970)
-# to convert them to standard UTC UNIX timestamps, add 978307200
 
 number_of_backed_up_rows=0
 existing_rows=0
