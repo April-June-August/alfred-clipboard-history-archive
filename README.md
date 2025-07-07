@@ -1,4 +1,4 @@
-# <img src='workflow/icon.png' width='45' align='center' alt='icon'> Clipboard History Archive for Alfred
+# <img src='workflow/icon.png' width='45' align='center' alt='icon'> Clipboard History Archive Alfred Workflow
 
 [➡️ Download the latest release](../../releases/latest)
 
@@ -32,17 +32,13 @@ Invoke the `clipboardarchive` keyword (can be customized inside ‘Configure Wor
 
 ## Search
 
-Invoke the `pp` keyword (can be customized inside ‘Configure Workflow…’ button) or the hotkey ⌘⌥X (can be customized by editing the Hotkey object) and start typing. 
+Invoke the `clipboardsearch` keyword (can be customized inside ‘Configure Workflow…’ button) or the hotkey ⌘⌥X (can be customized by editing the Hotkey object) and start typing. 
 
 ![](workflow/images/1.png)
 
 Clipboard items matching your query will show in the result. 
 
-![](workflow/images/2.png)
-
 You can hit ↵ to view the item in Alfred’s Text View (Alfred 5.5 required), hit ⌃↵ to copy the item to clipboard or  hit ⌘↵ to paste the item to front-most app. When you are in the preview window, you can get right back to the previous list window by pressing Esc.
-
-![](workflow/images/7.png)
 
 ![](workflow/images/8.png)
 
