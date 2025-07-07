@@ -237,7 +237,7 @@
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
@@ -251,7 +251,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string></string>
+				<string>Loading backups…</string>
 				<key>script</key>
 				<string>python3 find_in_history_archive.py "$1" "$SQLite3_database_folder/all.sqlite3"</string>
 				<key>scriptargtype</key>
@@ -259,9 +259,9 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Search in “{var:SQLite3_database_folder}/all.sqlite3.”</string>
+				<string>Search through Clipboard History backups created by this workflow</string>
 				<key>title</key>
-				<string>Search for Clipboard History Archive</string>
+				<string>Search Clipboard History</string>
 				<key>type</key>
 				<integer>11</integer>
 				<key>withspace</key>
@@ -326,7 +326,7 @@
 				<key>fixedorder</key>
 				<true/>
 				<key>items</key>
-				<string>[{"title":"Status of {var:SQLite3_database_folder}","arg":"status","subtitle":"Get numbers of records in the Alfred’s current database and your master database"},{"title":"Backup to {var:SQLite3_database_folder}","arg":"backup","subtitle":"Backup and merge records into main database"}]</string>
+				<string>[{"title":"Show Status","arg":"status","subtitle":"Show numbers of items in both Alfred’s and this workflow’s clipboard history"},{"title":"Create Backup","arg":"backup","subtitle":"Backup Alfred’s Clipboard History"}]</string>
 				<key>keyword</key>
 				<string>{var:history_archive_keyword}</string>
 				<key>matchmode</key>
@@ -334,9 +334,9 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Backup Alfred’s Clipboard History, merge or show status of the backup</string>
+				<string>Backup Alfred’s Clipboard History &amp; Show status of the backup</string>
 				<key>title</key>
-				<string>Archive Clipboard</string>
+				<string>Archive Clipboard History</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
