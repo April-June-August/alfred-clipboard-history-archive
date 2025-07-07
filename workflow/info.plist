@@ -9,18 +9,7 @@
 	<key>connections</key>
 	<dict>
 		<key>0FB5A647-B48B-481B-824F-AAEF148D10EE</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>273268BD-712D-4D86-B3CF-99BCD7B71194</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>1B16D2A2-9F32-4F09-811F-F9626DEAF79D</key>
 		<array>
 			<dict>
@@ -38,7 +27,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>31CAA87A-9ED2-4510-876F-27D4834B0DCC</string>
+				<string>58B5B0C5-88FC-4B6E-816F-81488287CA10</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -133,27 +122,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>✅️ Copied!</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>31CAA87A-9ED2-4510-876F-27D4834B0DCC</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
@@ -169,6 +137,60 @@
 			<string>276FE139-E1CA-4B46-8799-5D5FA4AB0F61</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./notificator --title "✅️ Copied!" --message $1 --sound 'Funk'</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>11</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>58B5B0C5-88FC-4B6E-816F-81488287CA10</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>7</integer>
+				<key>hotmod</key>
+				<integer>1572864</integer>
+				<key>hotstring</key>
+				<string>X</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>64178271-0630-49E3-B996-41E83761CB03</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -255,37 +277,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>7</integer>
-				<key>hotmod</key>
-				<integer>1572864</integer>
-				<key>hotstring</key>
-				<string>X</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>64178271-0630-49E3-B996-41E83761CB03</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>autopaste</key>
 				<true/>
 				<key>clipboardtext</key>
@@ -353,27 +344,6 @@
 			<string>alfred.workflow.input.listfilter</string>
 			<key>uid</key>
 			<string>45D1ECF6-2130-4939-B840-92C2CE2CD068</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>button1</key>
-				<string>O.K.</string>
-				<key>button2</key>
-				<string>Cancel</string>
-				<key>button3</key>
-				<string></string>
-				<key>description</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Result from the script</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.dialog</string>
-			<key>uid</key>
-			<string>273268BD-712D-4D86-B3CF-99BCD7B71194</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -474,13 +444,6 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 			<key>ypos</key>
 			<real>740</real>
 		</dict>
-		<key>273268BD-712D-4D86-B3CF-99BCD7B71194</key>
-		<dict>
-			<key>xpos</key>
-			<real>705</real>
-			<key>ypos</key>
-			<real>555</real>
-		</dict>
 		<key>276FE139-E1CA-4B46-8799-5D5FA4AB0F61</key>
 		<dict>
 			<key>xpos</key>
@@ -495,13 +458,6 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 			<key>ypos</key>
 			<real>245</real>
 		</dict>
-		<key>31CAA87A-9ED2-4510-876F-27D4834B0DCC</key>
-		<dict>
-			<key>xpos</key>
-			<real>705</real>
-			<key>ypos</key>
-			<real>95</real>
-		</dict>
 		<key>3EE4B8F3-F771-4959-92EF-B3AC7C33FC06</key>
 		<dict>
 			<key>xpos</key>
@@ -515,6 +471,18 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 			<real>60</real>
 			<key>ypos</key>
 			<real>535</real>
+		</dict>
+		<key>58B5B0C5-88FC-4B6E-816F-81488287CA10</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Notificator to post notifications
+https://github.com/vitorgalvao/notificator</string>
+			<key>xpos</key>
+			<real>705</real>
+			<key>ypos</key>
+			<real>95</real>
 		</dict>
 		<key>64178271-0630-49E3-B996-41E83761CB03</key>
 		<dict>
