@@ -1,4 +1,4 @@
-# <img src='workflow/icon.png' width='45' align='center' alt='icon'> Clipboard History Archive Alfred Workflow
+# <img src='workflow/icon.png' width='45' align='center' alt='icon'> Clipboard History Archive — An Alfred Workflow
 
 [➡️ Download the latest release](../../releases/latest)
 
