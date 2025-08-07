@@ -43,3 +43,7 @@ You can hit ↵ to view the item in Alfred’s Text View (Alfred 5.5 required), 
 ![](workflow/images/clipboard-history-archive-8.png)
 
 Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-history-forever/?do=findComment&comment=68859) on the Alfred Forum. The backup function is base on a modified version of [theSquashSH](https://www.alfredforum.com/profile/4058-thesquashsh/)’s [script](https://gist.github.com/pirate/6551e1c00a7c4b0c607762930e22804c).
+
+## License
+
+This project is licensed under the [GPL-3.0 license](./LICENSE).
