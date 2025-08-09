@@ -1,8 +1,8 @@
 # <img src='workflow/icon.png' width='45' align='center' alt='icon'> Clipboard History Archive — An Alfred Workflow
 
-[↓ Download the latest release](../../releases/latest)
-
 Backup Alfred’s clipboard history so it doesn’t expire!
+
+[⤓ Install on the Alfred Gallery](https://alfred.app/workflows/mayjunejuly/clipboard-history-archive/)
 
 Alfred’s Clipboard History can only keep items copied within 3 months at most. With this workflow you can have unlimited amount of items ready to search for. 
 
