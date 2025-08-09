@@ -1,6 +1,6 @@
 # <img src='workflow/icon.png' width='45' align='center' alt='icon'> Clipboard History Archive — An Alfred Workflow
 
-[➡️ Download the latest release](../../releases/latest)
+[↓ Download the latest release](../../releases/latest)
 
 Backup Alfred’s clipboard history so it doesn’t expire!
 
