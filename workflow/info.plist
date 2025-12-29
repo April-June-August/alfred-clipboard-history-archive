@@ -227,6 +227,8 @@
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
+				<key>skipuniversalaction</key>
+				<true/>
 				<key>subtext</key>
 				<string>Search through Clipboard History backups created by this workflow</string>
 				<key>title</key>
